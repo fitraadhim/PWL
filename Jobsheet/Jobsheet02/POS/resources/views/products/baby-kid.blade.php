@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head><title>Food & Beverage</title></head>
+<head><title>Baby & Kid</title></head>
 <body>
-    <h1>Halaman Products - Food & Beverage</h1>
+    <h1>Halaman Products - Baby & Kid</h1>
     <a href="/">Kembali</a>
 </body>
 </html>
