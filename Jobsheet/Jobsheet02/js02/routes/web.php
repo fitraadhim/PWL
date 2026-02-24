@@ -13,6 +13,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/greeting', [WelcomeController::class,'greeting']); 
+
 Route::resource('/photos', PhotoController::class);
 
 Route::resource('/photos', PhotoController::class)->only([
