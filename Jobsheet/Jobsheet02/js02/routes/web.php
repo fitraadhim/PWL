@@ -1,14 +1,21 @@
 <?php
 
+use App\Http\Controllers\WelcomeController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/hello', function () {
-//     return 'Hello World!';
-// });
+
+// Route::get('/hello', [WelcomeController::class, 'hello']);
+
+Route::get('/hello', [WelcomeController::class,'hello']);
+
+// Route::get('/hello', [App\Http\Controllers\WelcomeController::class,'hello']); 
+
+// Route::get('/hello', 'App\Http\Controllers\WelcomeController@hello');
 
 // Route::get('/world', function () {
 //     return "World!";
@@ -38,6 +45,6 @@ Route::get('/', function () {
 //     return ('Nama saya: ' .$name);
 // });
 
-Route::get('/user/{name?}', function ($name = "John") {
-    return ('Nama saya: ' .$name);
-});
+// Route::get('/user/{name?}', function ($name = "John") {
+//     return ('Nama saya: ' .$name);
+// });
