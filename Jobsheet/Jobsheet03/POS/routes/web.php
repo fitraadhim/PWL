@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KategoriCOntroller;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PenjualanController;
@@ -25,3 +26,5 @@ Route::get('halo', function () {
 // Route::get('/penjualan', [PenjualanController::class, 'index']);
 
 Route::get('/level', [LevelController::class, 'index']);
+
+Route::get('/kategori', [KategoriCOntroller::class, 'index']);
