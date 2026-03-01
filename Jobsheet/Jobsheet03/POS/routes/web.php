@@ -28,3 +28,5 @@ Route::get('halo', function () {
 Route::get('/level', [LevelController::class, 'index']);
 
 Route::get('/kategori', [KategoriCOntroller::class, 'index']);
+
+Route::get('/user', [UserController::class, 'index']);
