@@ -25,14 +25,18 @@ class UserController extends Controller
     //     'nama' => 'Pelanggan Pertama',
     //     ];
     //     UserModel::where('username', 'customer-1')->update($data);  
-    $data = [
-        'level_id' => 2,
-        'username' => 'manager_tiga',
-        'nama' => 'Manager Tiga',
-        'password' => Hash::make('12345')
-    ]; 
-    UserModel::create($data); // menambahkan data baru ke tabel m_user menggunakan Eloquent Model 
-    $user = UserModel::all(); // ambil semua data dari tabel m_user
+
+    // $data = [
+    //     'level_id' => 2,
+    //     'username' => 'manager_tiga',
+    //     'nama' => 'Manager Tiga',
+    //     'password' => Hash::make('12345')
+    // ]; 
+    // UserModel::create($data); // menambahkan data baru ke tabel m_user menggunakan Eloquent Model 
+    // $user = UserModel::all(); // ambil semua data dari tabel m_user
+    // return view('user', ['data' => $user]);
+
+    $user = UserModel::find(1);
     return view('user', ['data' => $user]);
     }    
 }
