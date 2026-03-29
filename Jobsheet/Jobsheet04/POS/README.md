@@ -46,3 +46,23 @@ karena ada dump and die
 ![alt text](image-16.png)
 dd
 
+Praktikum 2.6
+![alt text](image-17.png)
+Ubah dan Hapus
+
+![alt text](image-18.png)
+![alt text](image-19.png)
+sudah bisa tapi belum bisa untuk menyimpan
+
+![alt text](image-20.png)
+sudah bisa menambahkan data baru dan menyimpan pada database
+
+![alt text](image-21.png)
+ubah data
+
+![alt text](image-22.png)
+sudah bisa menyimpan
+
+![alt text](image-23.png)
+![alt text](image-24.png)
+sudah bisa menghapus

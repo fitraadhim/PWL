@@ -42,27 +42,71 @@ class UserController extends Controller
     // $user = UserModel::where('level_id', 1)->get();
     // return view('user', ['data' => $user]);
 
-    $user = UserModel::Create(
-        [
-            'username' => 'manager11',
-        // ],
-        // [
-            'nama' => 'Manager11 ',
-            'password' => Hash::make('12345'),
-            'level_id' => 2
-        ],
-    );
+    // $user = UserModel::Create(
+    //     [
+    //         'username' => 'manager11',
+    //     // ],
+    //     // [
+    //         'nama' => 'Manager11 ',
+    //         'password' => Hash::make('12345'),
+    //         'level_id' => 2
+    //     ],
+    // );
+    // // $user->save();
+
+    // // return view('user', ['data' => $user]);
+    // $user->username = 'manager12e';
+
     // $user->save();
 
-    // return view('user', ['data' => $user]);
-    $user->username = 'manager12e';
+    // $user->wasChanged(); //true
+    // $user->wasChanged('username'); //true
+    // $user->wasChanged('nama'); //false
+    // $user->wasChanged('nama', 'username'); //true
+    // dd($user->wasChanged(['nama', 'username'])); //true
 
-    $user->save();
-
-    $user->wasChanged(); //true
-    $user->wasChanged('username'); //true
-    $user->wasChanged('nama'); //false
-    $user->wasChanged('nama', 'username'); //true
-    dd($user->wasChanged(['nama', 'username'])); //true
+    $user = UserModel::all();
+    return view('user', ['data' => $user]);
     }
+    
+    public function tambah()
+    {
+        return view('user_tambah');
+    }
+
+    public function tambah_simpan(Request $request)
+    {
+        UserModel::create([
+            'username' => $request->username,
+            'nama' => $request->nama,
+            'password' => Hash::make($request->password),
+            'level_id' => $request->level_id
+        ]);
+        return redirect('/user');
+    }
+
+    public function ubah($id)
+    {
+        $data = UserModel::find($id);
+        return view('user_ubah', ['data' => $data]);
+    }
+
+    public function ubah_simpan(Request $request, $id)
+    {
+        UserModel::where('user_id', $id)->update([
+            'username' => $request->username,
+            'nama' => $request->nama,
+            'password' => Hash::make($request->password),
+            'level_id' => $request->level_id
+        ]);
+        return redirect('/user');
+    }
+
+    public function hapus($id)
+    {
+        $user = UserModel::find($id);
+        $user->delete();
+        return redirect('/user');
+    }
+
 }
