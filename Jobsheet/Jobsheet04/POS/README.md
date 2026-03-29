@@ -66,3 +66,10 @@ sudah bisa menyimpan
 ![alt text](image-23.png)
 ![alt text](image-24.png)
 sudah bisa menghapus
+
+Praktikum 2.7
+![alt text](image-25.png)
+dd
+
+![alt text](image-27.png)
+bertambah kode level dan nama level

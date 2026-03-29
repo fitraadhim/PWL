@@ -10,6 +10,7 @@ class UserController extends Controller
 {
     public function index()
     {
+        
     //coba akses model UserModel    
     // $data = [
     //     'username' => 'customer-1',
@@ -65,8 +66,13 @@ class UserController extends Controller
     // $user->wasChanged('nama', 'username'); //true
     // dd($user->wasChanged(['nama', 'username'])); //true
 
-    $user = UserModel::all();
-    return view('user', ['data' => $user]);
+
+    
+    // $user = UserModel::all();
+    // return view('user', ['data' => $user]);
+
+    $user = userModel::with('level')->get();
+        return view('user', ['data' => $user]);
     }
     
     public function tambah()
@@ -108,5 +114,5 @@ class UserController extends Controller
         $user->delete();
         return redirect('/user');
     }
-
+    
 }
