@@ -36,7 +36,12 @@ class UserController extends Controller
     // $user = UserModel::all(); // ambil semua data dari tabel m_user
     // return view('user', ['data' => $user]);
 
-    $user = UserModel::find(1);
+    // $user = UserModel::firstwhere('level_id', 1)(); // ambil data pertama dengan level_id 1
+    // return view('user', ['data' => $user]);
+
+    $user = UserModel::findOr(1, ['username', 'nama'], function() {
+        abort(404);
+    });
     return view('user', ['data' => $user]);
-    }    
+    }     
 }
