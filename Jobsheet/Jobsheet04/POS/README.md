@@ -16,3 +16,6 @@ Praktikum 2.1
 ![alt text](image-4.png)
 findOrFail(1)
 
+![alt text](image-5.png)
+tidak ada karena manager9 tidak ada
+

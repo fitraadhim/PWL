@@ -39,7 +39,7 @@ class UserController extends Controller
     // $user = UserModel::firstwhere('level_id', 1)(); // ambil data pertama dengan level_id 1
     // return view('user', ['data' => $user]);
 
-    $user = UserModel::findOrFail(1);
+    $user = UserModel::where('username', 'manager9')->firstOrFail();
     return view('user', ['data' => $user]);
     }     
 }
