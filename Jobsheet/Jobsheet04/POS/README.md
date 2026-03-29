@@ -40,3 +40,6 @@ firstOrNew
 ![alt text](image-14.png)
 jika ingin menyimpan data pada database maka harus memberi tambahan user->save agar data tersimpan pada database
 
+![alt text](image-15.png)
+karena ada dump and die
+

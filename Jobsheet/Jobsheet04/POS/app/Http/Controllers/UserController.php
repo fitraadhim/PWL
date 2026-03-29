@@ -42,18 +42,35 @@ class UserController extends Controller
     // $user = UserModel::where('level_id', 1)->get();
     // return view('user', ['data' => $user]);
 
-    $user = UserModel::firstOrNew(
+    $user = UserModel::Create(
         [
-            'username' => 'manager33',
-        ],
-        [
-            'nama' => 'Manager Tiga Tiga',
+            'username' => 'manager55',
+        // ],
+        // [
+            'nama' => 'Manager Lima Lima',
             'password' => Hash::make('12345'),
             'level_id' => 2
         ],
     );
-    $user->save();
+    // $user->save();
 
-    return view('user', ['data' => $user]);
+    // return view('user', ['data' => $user]);
+    $user->username = 'manager56';
+
+    $user->isDirty(); //true
+    $user->isDirty('username'); //true
+    $user->isDirty('nama'); //false
+    $user->isDirty('nama', 'username'); //true
+
+    $user->isClean(); //false
+    $user->isClean('username'); //true
+    $user->isClean('nama'); //true
+    $user->isClean('nama', 'username'); //false
+
+    $user->save(); // menyimpan perubahan ke database
+
+    $user->isDirty(); //false
+    $user->isClean(); //true
+    dd($user)->isDirty();
     }
 }
