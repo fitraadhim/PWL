@@ -11,3 +11,8 @@ hanya mencari data yang ingin dicari
 
 ![alt text](image-3.png)
 tidak ada karena data 20 tidak ada
+
+Praktikum 2.1
+![alt text](image-4.png)
+findOrFail(1)
+
