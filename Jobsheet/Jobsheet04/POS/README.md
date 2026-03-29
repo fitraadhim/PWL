@@ -19,3 +19,24 @@ findOrFail(1)
 ![alt text](image-5.png)
 tidak ada karena manager9 tidak ada
 
+Praktikum 2.2 
+![alt text](image-6.png)
+karena ada dd(user) yang berfungsi untuk debugging, dump and die ini akan menghentikan eksekusi script
+
+Praktikum 2.3
+![alt text](image-7.png)
+mengganti count dengan get, dan mengganti view dgn menambahkan foreach
+
+Praktikum 2.4
+![alt text](image-9.png)
+ambil data yang sudah ada atau membuat data baru
+
+![alt text](image-13.png)
+menambahkan data baru pada database
+
+![alt text](image-11.png)
+firstOrNew 
+
+![alt text](image-14.png)
+jika ingin menyimpan data pada database maka harus memberi tambahan user->save agar data tersimpan pada database
+
