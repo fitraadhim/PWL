@@ -9,3 +9,5 @@ tidak perlu memberikan foreach dalam user.blade.php dan bisa langsung mencari da
 ![alt text](image-2.png)
 hanya mencari data yang ingin dicari
 
+![alt text](image-3.png)
+tidak ada karena data 20 tidak ada
