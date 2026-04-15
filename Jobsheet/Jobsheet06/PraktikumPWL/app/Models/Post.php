@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Post extends Model
 {
@@ -22,9 +23,9 @@ class Post extends Model
     protected $casts = [
         'tags' => 'array',
         'published' => 'boolean',
-        'published_at' => 'datetime',
+        'published_at' => 'date',
     ];
-    public function category()
+    public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }

@@ -11,17 +11,19 @@ class UserForm
     {
         return $schema
             ->components([
-                //
                 TextInput::make('name')
                     ->required()
                     ->maxLength(255),
                 TextInput::make('email')
                     ->email()
                     ->required()
+                    ->unique(ignoreRecord: true)
                     ->maxLength(255),
                 TextInput::make('password')
                     ->password()
-                    ->required()
+                    ->required(fn (string $operation): bool => $operation === 'create')
+                    ->dehydrated(fn (?string $state): bool => filled($state))
+                    ->minLength(8)
             ]);
     }
 }
