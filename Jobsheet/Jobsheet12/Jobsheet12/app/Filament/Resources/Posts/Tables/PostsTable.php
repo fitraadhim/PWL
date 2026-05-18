@@ -10,6 +10,7 @@ use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ColorColumn;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Filters\Filter;
 use Filament\Forms\Components\DatePicker;
@@ -21,23 +22,47 @@ class PostsTable
     {
         return $table
             ->columns([
+                TextColumn::make('id')
+                    ->label('ID')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('title')
                     ->sortable()
-                    ->searchable(),
+                    ->searchable()
+                    ->toggleable(),
                 TextColumn::make('slug')
                     ->sortable()
-                    ->searchable(),
+                    ->searchable()
+                    ->toggleable(),
                 TextColumn::make('category.name')
                     ->sortable()
-                    ->searchable(),
-                ColorColumn::make('color'),
+                    ->searchable()
+                    ->toggleable(),
+                ColorColumn::make('color')
+                    ->toggleable(),
+                TextColumn::make('tags')
+                    ->label('Tags')
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->formatStateUsing(function ($state) {
+                        if (is_array($state)) {
+                            return implode(', ', $state);
+                        }
+
+                        return $state;
+                    }),
+                IconColumn::make('published')
+                    ->boolean()
+                    ->label('Published')
+                    ->toggleable(),
                 ImageColumn::make('image')
                     ->disk('public')
-                    ->visibility('public'),
+                    ->visibility('public')
+                    ->toggleable(),
                 TextColumn::make('created_at')
                     ->label('Created At')
                     ->dateTime()
-                    ->sortable(),
+                    ->sortable()
+                    ->toggleable(),
             ])->defaultSort('title', 'asc')
             ->filters([
                 Filter::make('created_at')
